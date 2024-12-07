@@ -70,7 +70,7 @@ function Navbar() {
         {/* Sliding Menu */}
         {toggle && (
           <motion.div
-            className="fixed w-96 ml-6 h-96 top-[35%] inset-0 bg-zinc-900 bg-opacity-95 rounded-2xl flex flex-col items-center justify-center z-50"
+            className="fixed w-96  h-96 left-6 top-[35%]  bg-zinc-900 bg-opacity-95 rounded-2xl flex flex-col items-center justify-center z-50"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ x: "100%" }}
@@ -80,36 +80,38 @@ function Navbar() {
 
             {/* Navigation Links */}
             <ul className="flex flex-col items-center gap-3 text-lg text-white">
-              {["Home", "About", "Projects", "Contact"].map((item, index) => (
-                <li
-                  key={index}
-                  className={`flex items-center gap-2 ${
-                    path == "/" + item && "underline"
-                  }`}
-                >
-                  {item == "Projects" && (
-                    <motion.div
-                      className=" w-2 h-2 bg-green-500 rounded-full shadow-lg pointer-events-none"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.8, 1, 0.8],
-                      }}
-                      transition={{
-                        duration: 0.6,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                      }}
-                    />
-                  )}
-                  <a
-                    href={`/${item}`}
-                    onClick={() => setToggle(false)}
-                    className="hover:text-green-400 transition"
+              {["Home", "About", "Projects", "Achievements"].map(
+                (item, index) => (
+                  <li
+                    key={index}
+                    className={`flex items-center gap-2 ${
+                      path == "/" + item && "underline"
+                    }`}
                   >
-                    {item}
-                  </a>
-                </li>
-              ))}
+                    {item == "Projects" && (
+                      <motion.div
+                        className=" w-2 h-2 bg-green-500 rounded-full shadow-lg pointer-events-none"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          opacity: [0.8, 1, 0.8],
+                        }}
+                        transition={{
+                          duration: 0.6,
+                          repeat: Infinity,
+                          repeatType: "loop",
+                        }}
+                      />
+                    )}
+                    <a
+                      href={`/${item}`}
+                      onClick={() => setToggle(false)}
+                      className="hover:text-green-400 transition"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
 
             <div className="flex mt-10 justify-between items-center gap-10">
