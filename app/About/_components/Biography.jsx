@@ -28,21 +28,23 @@ function Biography() {
           <h2 className="text-3xl font-bold">Biography</h2>
           <div className="mt-2 mb-5 border-b-4 border-green-500 w-24"></div>
           <p>
-            Greetings! I'm a dedicated full-stack developer with over 2 years of
-            hands-on experience in creating dynamic web application and saas
-            application. My expertise lies in JavaScript, React.js (also
-            Next.js),and the MERN stack, alongside a solid command of
-            technologies like sql, MongoDB, and state management libraries like
+            Greetings! I&apos;m a dedicated full-stack developer with over 2
+            years of hands-on experience in creating dynamic web applications
+            and SaaS applications. My expertise lies in JavaScript, React.js
+            (also Next.js), and the MERN stack, alongside a solid command of
+            technologies like SQL, MongoDB, and state management libraries like
             Redux/Zustand.
           </p>
           <p className="mt-5">
-            I've brought numerous projects to life, showcasing my proficiency in
-            these technologies. Additionally, my curiosity extends to the AI
-            realm where I've integrated Ai in some of my projects. I've worked
-            on full end-to-end projects, harnessing the power of Large Language
-            Models using OpenAI's ChatGPT for NLP tasks along with React.js as a
-            frontend, Node.js as backend, and MongoDB and sql as databases.
+            I&apos;ve brought numerous projects to life, showcasing my
+            proficiency in these technologies. Additionally, my curiosity
+            extends to the AI realm, where I&apos;ve integrated AI into some of
+            my projects. I&apos;ve worked on full end-to-end projects,
+            harnessing the power of Large Language Models using OpenAI&apos;s
+            ChatGPT for NLP tasks, along with React.js as a frontend, Node.js as
+            a backend, and MongoDB and SQL as databases.
           </p>
+
           <p className="mt-5">
             Looking forward to connecting and exploring new opportunities in the
             tech world!
