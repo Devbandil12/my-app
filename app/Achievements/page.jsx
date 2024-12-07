@@ -29,13 +29,13 @@ function page() {
         </div>
         <div className="w-80 h-80 lg:ml-56  border-white border-[0.2rem] rounded-full grid place-items-center">
           {" "}
-          <img src="/hero.heic" alt="" className="w-72 h-72 rounded-full " />
+          <img src="/hero.png" alt="" className="w-72 h-72 rounded-full " />
         </div>
       </div>
       <div className="grid my-10 grid-cols-1 md:grid-cols-2 gap-10">
         <div className="w-80 h-80   border-white border-[0.2rem] rounded-full grid place-items-center">
           {" "}
-          <img src="/hero.heic" alt="" className="w-72 h-72 rounded-full " />
+          <img src="/hero.png" alt="" className="w-72 h-72 rounded-full " />
         </div>
         <div className="my-10 ">
           <h2 className="text-2xl text-slate-200 underline-slide">

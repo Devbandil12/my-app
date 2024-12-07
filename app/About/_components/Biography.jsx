@@ -57,7 +57,7 @@ function Biography() {
             {/* Profile Image */}
             <div className="w-80 h-80 rounded-full border-4 border-gray-500 flex items-center justify-center">
               <img
-                src="/hero.heic"
+                src="/hero.png"
                 alt="Profile"
                 className="rounded-full rotate-3 w-64 h-64"
               />

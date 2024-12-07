@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Contact, SquareArrowOutUpRight } from "lucide-react";
 import { motion, useSpring } from "framer-motion";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Page = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -67,9 +68,15 @@ const Page = () => {
           <Button className="flex items-center gap-2 px-5 py-3 ">
             Resume <SquareArrowOutUpRight />
           </Button>
-          <Button className="flex items-center gap-2 px-5 py-3 ">
-            Contact <Contact />
-          </Button>
+          <Link
+            href={
+              "mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
+            }
+          >
+            <Button className="flex items-center gap-2 px-5 py-3 ">
+              Contact <Contact />
+            </Button>
+          </Link>
         </motion.div>
       </motion.div>
     </div>
