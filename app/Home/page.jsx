@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <div
-      className="p-5 md:p-10 h-screen text-white flex flex-col md:flex-row items-center justify-center gap-10 overflow-hidden relative"
+      className="p-2 md:p-10 h-screen text-white flex flex-col md:flex-row items-center justify-center gap-10 overflow-hidden relative"
       onMouseMove={handleMouseMove}
     >
       {/* Animated Dot */}
@@ -27,7 +27,7 @@ const Page = () => {
       <motion.img
         src="/main.webp"
         alt="Developer Image"
-        className="w-[18rem] md:w-[30rem] rounded-full shadow-lg shadow-black"
+        className="w-[18rem] md:w-[30rem] rounded-2xl md:rounded-full  shadow-lg shadow-black"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -42,13 +42,13 @@ const Page = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h2
-          className="text-xl font-bold md:text-5xl md:font-black tracking-tight text-slate-200 bg-clip-text"
+          className="text-3xl leading-relaxed font-bold md:text-5xl md:font-black tracking-tight text-slate-200 bg-clip-text"
           whileHover={{ scale: 1.02 }}
         >
           Unleashing Possibilities through Code: The Full Stack Journey.👨🏻‍💻
         </motion.h2>
         <motion.p
-          className="mt-5 text-sm md:text-base text-gray-300"
+          className="mt-5 text-lg text-center md:text-start md:text-base text-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -61,12 +61,12 @@ const Page = () => {
         {/* Buttons */}
 
         <motion.div
-          className="flex flex-col items-center  md:flex-row gap-5 mt-5 justify-center md:justify-start"
+          className="flex items-center  md:flex-row gap-5 mt-5 mb-0 justify-center md:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-          <Button className="flex items-center gap-2 px-5 py-3 ">
+          <Button className="flex items-center gap-2 px-5 py-3 border  ">
             Resume <SquareArrowOutUpRight />
           </Button>
           <Link
@@ -74,7 +74,7 @@ const Page = () => {
               "mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
             }
           >
-            <Button className="flex items-center gap-2 px-5 py-3 ">
+            <Button className="flex border  items-center gap-2 px-5 py-3 ">
               Contact <Contact />
             </Button>
           </Link>

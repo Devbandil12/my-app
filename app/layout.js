@@ -26,6 +26,10 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
+        <div className="border-t-[2px] flex justify-around  text-white text-sm md:text-xl  p-10">
+        <h2>2024 © All Rights Reserved</h2>
+        <h2>Crafted with ❤️ by Dev</h2>
+      </div>
       </body>
     </html>
   );
