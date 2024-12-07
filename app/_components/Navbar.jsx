@@ -94,22 +94,26 @@ function Navbar() {
           </motion.div>
         )}
       </div>
-
-      <div className="flex justify-center items-center gap-10">
-        <Link href={"https://www.linkedin.com/in/dev-bandil"}>
-          <img
-            src="/linkedin.svg"
-            alt=""
-            className="w-10 cursor-pointer bg-white rounded-xl hover:-translate-y-2 transition-all"
-          />
-        </Link>
-        <Link href={"https://www.github.com/devbandil12"}>
-          <img
-            src="/github.svg"
-            alt=""
-            className="w-10 cursor-pointer  bg-white rounded-full border border-white hover:translate-y-2 transition-all"
-          />
-        </Link>
+      <div className="hidden md:block">
+        <div className="flex justify-center items-center gap-10">
+          <Link href={"https://www.linkedin.com/in/dev-bandil"}>
+            <img
+              src="/linkedin.svg"
+              alt=""
+              className="w-10 cursor-pointer bg-white rounded-xl hover:-translate-y-2 transition-all"
+            />
+          </Link>
+          <Link href={"https://www.github.com/devbandil12"}>
+            <img
+              src="/github.svg"
+              alt=""
+              className="w-10 cursor-pointer  bg-white rounded-full border border-white hover:translate-y-2 transition-all"
+            />
+          </Link>
+        </div>
+      </div>
+      <div className="block md:hidden">
+        <h2 className="text-white text-2xl font-medium"> Dev Bandil</h2>
       </div>
     </div>
   );

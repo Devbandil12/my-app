@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <div
-      className="p-10 h-screen text-white flex flex-col md:flex-row items-center justify-center gap-10 overflow-hidden relative"
+      className="p-5 md:p-10 h-screen text-white flex flex-col md:flex-row items-center justify-center gap-10 overflow-hidden relative"
       onMouseMove={handleMouseMove}
     >
       {/* Animated Dot */}
@@ -59,8 +59,9 @@ const Page = () => {
         </motion.p>
 
         {/* Buttons */}
+
         <motion.div
-          className="flex flex-col md:flex-row gap-5 mt-5 justify-center md:justify-start"
+          className="flex flex-col items-center  md:flex-row gap-5 mt-5 justify-center md:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
