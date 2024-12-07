@@ -1,0 +1,38 @@
+@keyframes wave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+.underline-wave {
+  position: relative;
+  display: inline-block;
+}
+nav {
+  .hover\:underline-slide::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width 0.3s;
+  }
+
+  &:hover .hover\:underline-slide::after {
+    width: 100%;
+  }
+}
+
+.underline-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #34d399, #60a5fa, #a78bfa);
+  background-size: 200%;
+  animation: wave 2s linear infinite;
+}
