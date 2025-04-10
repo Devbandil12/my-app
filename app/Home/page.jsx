@@ -24,7 +24,7 @@ const Page = () => {
       {/* Heading */}
       <div className="text-center">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          <span className="text-gray-400">Hi I'm </span>
+          <span className="text-gray-400">Hi i am </span>
           <span className="text-blue-500">Dev Bandil.</span>
         </h1>
       </div>
@@ -37,9 +37,9 @@ const Page = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          I'm a 20-year-old B.Tech student and aspiring full-stack developer.
-          I'm skilled in Next.js and the MERN stack, with a passion for building
-          creative and efficient applications. Currently, I'm focused on honing
+          I am a 20-year-old B.Tech student and aspiring full-stack developer,
+          skilled in Next.js and the MERN stack, with a passion for building
+          creative and efficient applications. Currently, I am focused on honing
           my development skills and exploring new skills.
         </motion.p>
 
