@@ -1,58 +1,67 @@
+import { Code, ExternalLink } from "lucide-react";
 import React from "react";
 
 const Card = ({ data }) => {
   return (
-    <div className="max-w-sm mx-auto  border border-gray-400 hover:scale-105 transition-all bg-gray-800 text-white rounded-lg shadow-md overflow-hidden">
+    <div className="group max-w-sm md:w-80 mx-auto border-gray-500 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
       {/* Image Section */}
-      <img
-        src={data.image || "/ai lms.png"}
-        alt={`${data.name}'s Profile`}
-        className="w-full  h-48 object-cover"
-      />
+      <div className="relative overflow-hidden">
+        <img
+          src={data.image || "/ai lms.png"}
+          alt={`${data.name}'s Project`}
+          className="w-full  h-48 object-cover opacity-80 transition-transform duration-300 group-hover:scale-105 "
+        />
 
-      {/* Skills */}
-
-      {/* Content Section */}
-      <div className="p-5">
-        {/* Name */}
-        <h2 className="text-2xl font-bold">{data.name}</h2>
-        <p className="text-sm text-gray-400 mt-2  ">
-          {data?.techUsed.map((skill, index) => (
-            <span key={index}>
-              {skill}
-              {index < data.techUsed.length - 1 && ", "}
-            </span>
-          ))}
-        </p>
-        {/* Description */}
-        <p className="text-gray-300 mt-4">{data.desc}</p>
-
-        {/* Icons Section */}
-        <div className="flex gap-4 justify-between mt-5">
-          {/* GitHub Link */}
+        {/* Top-right icons */}
+        <div className="absolute bottom-3 right-3 flex items-center gap-2">
+          {/* GitHub */}
           <a
             href={data.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
+            className="bg-black/60 opacity-0 group-hover:opacity-100 backdrop-blur-md hover:bg-blue-600 hover:text-white p-2 rounded-full transition-colors"
+            title="View Code"
           >
-            <img
-              src="/github.svg"
-              className="w-10 bg-white rounded-full border border-white"
-              alt=""
-            />
+            <Code size={18} />
           </a>
+        </div>
+      </div>
 
-          {/* Visit Link */}
+      {/* Content Section */}
+      <div className="p-5 flex flex-col gap-4">
+        {/* Name + Visit Icon */}
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-semibold tracking-wide group-hover:text-blue-400">
+            {data.name}
+          </h2>
           <a
             href={data.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
+            title="Visit Project"
+            className="text-gray-400 hover:text-blue-400 transition-colors"
           >
-            <p className="underline text-blue-500"> Visit Now</p>
+            <ExternalLink size={18} />
           </a>
         </div>
+
+        {/* Skills */}
+        <div className="flex flex-wrap gap-2 text-sm">
+          {data?.techUsed?.map((skill, index) => (
+            <span
+              key={index}
+              className="flex items-center gap-1 bg-zinc-800 px-2 py-1 rounded-full shadow-sm"
+            >
+              <img src={skill?.image} alt={skill?.name} className="w-4 h-4" />
+              <span>{skill?.name}</span>
+            </span>
+          ))}
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+          {data.desc}
+        </p>
       </div>
     </div>
   );

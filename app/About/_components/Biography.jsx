@@ -10,7 +10,7 @@ function Biography() {
   ];
   const Other = [
     { name: "Git", icon: "/github.svg" },
-    { name: "Docker", icon: "/docker.webp" },
+    { name: "Docker", icon: "/docker-icon.webp" },
     { name: "Postman", icon: "/postman.webp" },
     { name: "GSAP", icon: "/Gsap.webp" },
   ];

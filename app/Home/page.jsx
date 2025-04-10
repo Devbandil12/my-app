@@ -4,11 +4,11 @@ import { Contact, SquareArrowOutUpRight } from "lucide-react";
 import { motion, useSpring } from "framer-motion";
 import React, { useState } from "react";
 import Link from "next/link";
+import { Typewriter } from "../_components/Navbar";
 
 const Page = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  // Spring animations for smooth movement
   const springX = useSpring(cursorPosition.x, { stiffness: 150, damping: 20 });
   const springY = useSpring(cursorPosition.y, { stiffness: 150, damping: 20 });
 
@@ -18,64 +18,58 @@ const Page = () => {
 
   return (
     <div
-      className="p-2 md:p-10 h-screen text-white flex flex-col md:flex-row items-center justify-center gap-10 overflow-hidden relative"
+      className="p-5 md:p-10 min-h-screen bg-black text-white flex flex-col items-center justify-center gap-10 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* Animated Dot */}
+      {/* Heading */}
+      <div className="text-center">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <span className="text-gray-400">Hi I'm </span>
+          <span className="text-blue-500">Dev Bandil.</span>
+        </h1>
+      </div>
 
-      {/* Profile Image */}
-      <motion.img
-        src="/main.webp"
-        alt="Developer Image"
-        className="w-[18rem] md:w-[30rem] rounded-2xl md:rounded-full  shadow-lg shadow-black"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        whileHover={{ scale: 1.05 }}
-      />
-
-      {/* Text Content */}
-      <motion.div
-        className="text-center md:text-left md:p-10"
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <motion.h2
-          className="text-3xl leading-relaxed font-bold md:text-5xl md:font-black tracking-tight text-slate-200 bg-clip-text"
-          whileHover={{ scale: 1.02 }}
-        >
-          Unleashing Possibilities through Code: The Full Stack Journey.👨🏻‍💻
-        </motion.h2>
+      {/* Description + Image */}
+      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 max-w-4xl w-full text-center md:text-left">
         <motion.p
-          className="mt-5 text-lg text-center md:text-start md:text-base text-gray-300"
+          className="text-base text-white px-2 md:px-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          As a skilled full-stack developer, I am dedicated to turning ideas
-          into innovative web applications. Explore my latest projects and
-          articles, showcasing my expertise in various latest technologies.
+          I'm a 20-year-old B.Tech student and aspiring full-stack developer.
+          I'm skilled in Next.js and the MERN stack, with a passion for building
+          creative and efficient applications. Currently, I'm focused on honing
+          my development skills and exploring new skills.
         </motion.p>
 
-        {/* Buttons */}
+        <img
+          src="/profile.jpg"
+          alt="Dev Bandil"
+          className="w-52 h-52 md:w-48 md:h-48 rounded-full object-cover "
+        />
+      </div>
 
-        <motion.div
-          className="flex items-center  md:flex-row gap-5 mt-5 mb-0 justify-center md:justify-start"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-        >
-          <Button className="flex items-center gap-2 px-5 py-3 border  ">
-            Resume <SquareArrowOutUpRight />
-          </Button>
+      {/* Typewriter + Buttons */}
+      <motion.div className="text-center md:text-left">
+        <Typewriter text="Full-stack Web Developer" speed={80} />
+
+        <motion.div className="flex flex-col sm:flex-row items-center  justify-center md:justify-start ml-12 gap-4 mt-6">
           <Link
-            href={
-              "mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
-            }
+            href="https://drive.google.com/file/d/1MfptVUBynyKFBanjaXKUgjE_SrxTDW34/view"
+            target="_blank"
           >
-            <Button className="flex border  items-center gap-2 px-5 py-3 ">
-              Contact <Contact />
+            <Button className="flex items-center bg-blue-500 hover:bg-blue-500 gap-2 px-6 py-3 rounded-xl ">
+              Resume <SquareArrowOutUpRight />
+            </Button>
+          </Link>
+
+          <Link
+            href="mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
+            target="_blank"
+          >
+            <Button className="flex text-black items-center hover:bg-white gap-2 px-6 py-3 rounded-xl bg-white">
+              hire me <Contact />
             </Button>
           </Link>
         </motion.div>
