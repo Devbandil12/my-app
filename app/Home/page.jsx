@@ -56,7 +56,7 @@ const Page = () => {
 
         <motion.div className="flex flex-col sm:flex-row items-center  justify-center md:justify-start ml-12 gap-4 mt-6">
           <Link
-            href="https://drive.google.com/file/d/1MfptVUBynyKFBanjaXKUgjE_SrxTDW34/view"
+            href="https://drive.google.com/file/d/1ZkZhIZRh41i_IsSURTXmEMuj3axzgaOo/view?usp=sharing"
             target="_blank"
           >
             <Button className="flex items-center bg-blue-500 hover:bg-blue-500 gap-2 px-6 py-3 rounded-xl ">
