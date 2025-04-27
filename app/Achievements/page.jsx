@@ -1,8 +1,11 @@
 import React from "react";
 
-function page() {
+function Achievement() {
   return (
-    <div className="p-10">
+    <div className="p-10 h-screen   ">
+      <h2 className=" text-3xl text-blue-500 my-10 text-center">
+        <strong>Achievements</strong>
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <h2 className="text-2xl my-2 text-slate-200 underline-wave">
@@ -36,7 +39,11 @@ function page() {
         <div className=" hidden md:block ">
           <div className="w-80 h-80  border-white border-[0.2rem] rounded-full grid place-items-center">
             {" "}
-            <img src="/hero.png" alt="" className="w-72 h-72 rounded-full " />
+            <img
+              src="/achieve.png"
+              alt=""
+              className="w-72 h-72 object-cover object-center rounded-full "
+            />
           </div>
         </div>
         <div className="my-10 ">
@@ -55,9 +62,15 @@ function page() {
             creation remains strong, and I look forward to exploring it again
             when the time is right.
           </p>
-          <div className="w-80 h-80 block md:hidden  border-white border-[0.2rem] rounded-full grid place-items-center">
-            {" "}
-            <img src="/hero.png" alt="" className="w-72 h-72 rounded-full " />
+          <div className="block md:hidden mt-10">
+            <div className="w-80 h-80   border-white border-[0.2rem] rounded-full grid place-items-center">
+              {" "}
+              <img
+                src="/achieve.png"
+                alt=""
+                className="w-72 h-72 object-cover object-center rounded-full "
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -65,4 +78,4 @@ function page() {
   );
 }
 
-export default page;
+export default Achievement;

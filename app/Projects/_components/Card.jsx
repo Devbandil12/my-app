@@ -3,7 +3,7 @@ import React from "react";
 
 const Card = ({ data }) => {
   return (
-    <div className="group max-w-sm md:w-80 mx-auto border-gray-500 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
+    <div className="group  border-b-[2px]   border-gray-500 border-1 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
       {/* Image Section */}
       <div className="relative overflow-hidden">
         <img

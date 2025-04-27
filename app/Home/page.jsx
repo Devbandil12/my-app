@@ -1,10 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Contact, SquareArrowOutUpRight } from "lucide-react";
+import { ChevronRight, Contact, SquareArrowOutUpRight } from "lucide-react";
 import { motion, useSpring } from "framer-motion";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Typewriter } from "../_components/Navbar";
+import Cardlist from "../Projects/_components/Cardlist";
+import Biography from "../About/_components/Biography";
+import Achievement from "../Achievements/page";
 
 const Page = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -17,63 +20,98 @@ const Page = () => {
   };
 
   return (
-    <div
-      className="p-5 md:p-10 min-h-screen bg-black text-white flex flex-col items-center justify-center gap-10 overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Heading */}
-      <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          <span className="text-gray-400">Hi i am </span>
-          <span className="text-blue-500">Dev Bandil.</span>
-        </h1>
-      </div>
+    <div>
+      <div
+        className="p-5 md:p-10 min-h-screen bg-black text-white flex flex-col items-center justify-center gap-10 overflow-hidden"
+        onMouseMove={handleMouseMove}
+      >
+        {/* Heading */}
+        <div className="hover:border-t-[1px] transition-all  hove border-b-[1px]  border-b-blue-500  rounded-3xl  duration-50 hover:border-b-0 transition-all">
+          <p className=" p-1 border-[1px] border-gray-500 flex items-center justify-center gap-1 px-2 rounded-3xl text-[10px] ">
+            Available for freelance projects <ChevronRight size={10} />
+          </p>
+        </div>
+        <div className="text-center">
+          <h1 className="text-3xl md:text-7xl font-bold leading-tight">
+            <span className="text-gray-400">Hi i'm </span>
+            <span className="text-blue-500">Dev Bandil</span>
+          </h1>
+        </div>
 
-      {/* Description + Image */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 max-w-4xl w-full text-center md:text-left">
-        <motion.p
-          className="text-base text-white px-2 md:px-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          I am a 20-year-old B.Tech student and aspiring full-stack developer,
-          skilled in Next.js and the MERN stack, with a passion for building
-          creative and efficient applications. Currently, I am focused on honing
-          my development skills and exploring new skills.
-        </motion.p>
-
-        <img
-          src="/profile.jpg"
-          alt="Dev Bandil"
-          className="w-52 h-52 md:w-48 md:h-48 rounded-full object-cover "
-        />
-      </div>
-
-      {/* Typewriter + Buttons */}
-      <motion.div className="text-center md:text-left">
-        <Typewriter text="Full-stack Web Developer" speed={80} />
-
-        <motion.div className="flex flex-col sm:flex-row items-center  justify-center md:justify-start ml-12 gap-4 mt-6">
-          <Link
-            href="https://drive.google.com/file/d/1ZkZhIZRh41i_IsSURTXmEMuj3axzgaOo/view?usp=sharing"
-            target="_blank"
+        {/* Description + Image */}
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-5 max-w-4xl w-full text-center md:text-left">
+          <motion.p
+            className=" max-w-[25rem] text-sm  text-white px-2 md:px-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <Button className="flex items-center bg-blue-500 hover:bg-blue-500 gap-2 px-6 py-3 rounded-xl ">
-              Resume <SquareArrowOutUpRight />
-            </Button>
-          </Link>
+            I am a 20-year-old B.Tech student and aspiring full-stack developer,
+            skilled in Next.js and the MERN stack, with a passion for building
+            creative and efficient applications. Currently, I am focused on
+            honing my development skills and exploring new skills.
+          </motion.p>
 
-          <Link
-            href="mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
-            target="_blank"
-          >
-            <Button className="flex text-black items-center hover:bg-white gap-2 px-6 py-3 rounded-xl bg-white">
-              hire me <Contact />
-            </Button>
-          </Link>
+          <img
+            src="/profile.jpg"
+            alt="Dev Bandil"
+            className="w-52 h-52 md:w-40 md:h-40 rounded-full object-cover "
+          />
+        </div>
+
+        {/* Typewriter + Buttons */}
+        <motion.div className="text-center md:text-left">
+          <Typewriter text="Full-stack Web Developer" speed={80} />
+
+          <motion.div className=" flex items-center justify-center flex-col md:flex-row gap-5 mt-5 ">
+            <Link
+              href="https://drive.google.com/file/d/1OY7bZBwp-6gfwz9_CQmJmnBemcp9aoVN/view"
+              target="_blank"
+            >
+              <Button className="flex  items-center bg-blue-500 hover:bg-blue-500 gap-2 px-6 py-3 rounded-xl ">
+                Resume <SquareArrowOutUpRight />
+              </Button>
+            </Link>
+
+            <Link
+              href="mailto:devbandil120@gmail.com?subject=Hello&body=I would like to connect with you."
+              target="_blank"
+            >
+              <Button className="flex text-black items-center hover:bg-white gap-2 px-6 py-3 rounded-xl bg-white">
+                hire me <Contact />
+              </Button>
+            </Link>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
+      <div
+        id="Projects"
+        className=" mt-[15rem] md:mt-[15rem] lg:mt-0 h-screen text-white flex items-center justify-center flex-col bg-black"
+      >
+        <h2 className="text-2xl md:text-5xl mt-[5rem] font-bold text-center">
+          MY <span className=" text-blue-500">Projects</span>
+        </h2>
+        <div className=" h-[5px] mt-1  bg-blue-500 w-[20rem]">.</div>
+        <h2 className=" text-center mb-2 max-w-[24rem] text-gray-500 ">
+          Some of my project that showcase my interest and skills, adding full
+          stack + freelance projects{" "}
+        </h2>
+
+        <div className=" w-full  md:mt-[3rem]">
+          <Cardlist />
+        </div>
+      </div>
+      <div id="Skills" className="   mt-[20rem] md:mt-10 w-full ">
+        <Biography />
+      </div>
+
+      <div id="Achievements">
+        <Achievement />
+      </div>
+      <div className="  border-t-[2px] flex justify-around  text-white text-sm md:text-xl mt-[65rem] md:mt-[20rem] p-10">
+        <h2>2025 © All Rights Reserved</h2>
+        <h2>Crafted with ❤️ by Dev</h2>
+      </div>
     </div>
   );
 };
