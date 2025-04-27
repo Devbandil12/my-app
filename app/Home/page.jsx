@@ -33,7 +33,7 @@ const Page = () => {
         </div>
         <div className="text-center">
           <h1 className="text-3xl md:text-7xl font-bold leading-tight">
-            <span className="text-gray-400">Hi i'm </span>
+            <span className="text-gray-400">Hi i am </span>
             <span className="text-blue-500">Dev Bandil</span>
           </h1>
         </div>
