@@ -4,7 +4,7 @@ import Card from "./Card";
 function Cardlist() {
   const projects = [
     {
-      image: "/aicruiter.png",
+      image: "/aic.png",
       link: "https://ai-cruiter-wheat.vercel.app/",
       name: "AiCruiter",
       techUsed: [
@@ -31,16 +31,17 @@ function Cardlist() {
       github: "https://github.com/devbandil12",
     },
     {
-      image: "/mock.png",
-      link: "https://github.com/devbandil12",
-      name: "Make it Happen",
+      image: "/f2.png",
+      link: "https://devidaura.com",
+      name: "DevidAura",
       techUsed: [
-        { image: "/Ai.webp", name: "gemini Api" },
-        { image: "/nextwhite.webp", name: "nextjs" },
         { image: "/react.webp", name: "Reactjs" },
+        { image: "/cloudi.webp", name: "Cloudinary" },
         { image: "/tailwind.svg", name: "tailwind" },
-        { name: "Redux", image: "/redux.webp" },
+        { name: "drizzle Orm", image: "/sql.svg" },
+        { name: "Nodejs", image: "/nodejs.webp" },
       ],
+
       github: "https://github.com/devbandil12",
     },
   ];
