@@ -1,6 +1,5 @@
 import React from "react";
 import Biography from "./_components/Biography";
-import Qualification from "./_components/SkillsPage";
 
 function page() {
   return (

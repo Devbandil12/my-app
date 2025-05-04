@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Techstackbutton from "./Techstackbutton";
 import { motion } from "framer-motion";
