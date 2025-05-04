@@ -1,81 +1,132 @@
-import React from "react";
+"use client";
 
-function Achievement() {
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import SparklesText from "@/components/Stars";
+import { CrownIcon } from "lucide-react";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const Achievement = () => {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const isInView1 = useInView(ref1, { once: true });
+  const isInView2 = useInView(ref2, { once: true });
+  const isInView3 = useInView(ref3, { once: true });
+
   return (
-    <div className="p-10 h-screen   ">
-      <h2 className=" text-3xl text-blue-500 my-10 text-center">
-        <strong>Achievements</strong>
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div>
-          <h2 className="text-2xl my-2 text-slate-200 underline-wave">
-            Bhopal Award
+    <div className="p-10 min-h-screen bg-black text-white">
+      {/* Heading */}
+      <motion.div
+        className="relative flex items-center justify-center"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <SparklesText
+          text="Achievements"
+          className="p-5 text-white"
+          Crown={true}
+        />
+      </motion.div>
+
+      {/* First Achievement Block */}
+      <motion.div
+        ref={ref1}
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10"
+        initial="hidden"
+        whileInView={isInView1 ? "visible" : "hidden"}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp}>
+          <h2 className="text-2xl rounded-xl p-2 text-slate-200 w-fit underline-wave">
+            🎓 Bhopal Award
           </h2>
-          <ul className="list-disc text-xl my-5 pl-5 text-slate-100">
-            <li>
-              I scored an outstanding 93% in my 10th-grade board exams under the
-              Bhopal Board.
-            </li>
-            <li>
-              Recognized by my school with an award for sincerity, reflecting my
-              dedication and hard work.
-            </li>
-            <li>
-              Secured an impressive 89% in my 12th-grade Bhopal Board
-              examinations.
-            </li>
-            <li>
-              Demonstrated a commitment to academic excellence, persistence, and
-              consistency.
-            </li>
+          <ul className="list-disc text-xl my-5 pl-5 text-slate-100 space-y-2">
+            <li>Scored 93% in 10th-grade board exams (Bhopal Board).</li>
+            <li>Awarded for sincerity by my school.</li>
+            <li>Secured 89% in 12th-grade Bhopal Board exams.</li>
+            <li>Demonstrated consistent academic dedication.</li>
           </ul>
-        </div>
-        <div className="w-80 h-80 lg:ml-56  border-white border-[0.2rem] rounded-full grid place-items-center">
-          {" "}
-          <img src="/hero.png" alt="" className="w-72 h-72 rounded-full " />
-        </div>
-      </div>
-      <div className="grid my-10  grid-cols-1 md:grid-cols-2 gap-10">
-        <div className=" hidden md:block ">
-          <div className="w-80 h-80  border-white border-[0.2rem] rounded-full grid place-items-center">
-            {" "}
-            <img
-              src="/achieve.png"
-              alt=""
-              className="w-72 h-72 object-cover object-center rounded-full "
-            />
-          </div>
-        </div>
-        <div className="my-10 ">
-          <h2 className="text-2xl text-slate-200 my-2 underline-wave">
-            Content Creation Award
+        </motion.div>
+
+        <motion.div
+          className="w-80 h-80 lg:ml-56 border-white border-[0.2rem] rounded-full grid place-items-center"
+          variants={fadeInUp}
+        >
+          <img src="/hero.png" alt="" className="w-72 h-72 rounded-full" />
+        </motion.div>
+      </motion.div>
+
+      {/* Second Achievement Block */}
+      <motion.div
+        ref={ref2}
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20"
+        initial="hidden"
+        whileInView={isInView2 ? "visible" : "hidden"}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.3,
+            },
+          },
+        }}
+      >
+        {/* Desktop Image */}
+        <motion.div
+          className="hidden md:grid w-80 h-80 border-white border-[0.2rem] rounded-full place-items-center"
+          variants={fadeInUp}
+        >
+          <img
+            src="/achieve.png"
+            alt="Achievement"
+            className="w-72 h-72 object-cover rounded-full"
+          />
+        </motion.div>
+
+        {/* Content */}
+        <motion.div className="my-10" variants={fadeInUp}>
+          <h2 className="text-2xl text-slate-200 my-2 underline underline-offset-4 decoration-blue-500">
+            📸 Content Creation Award
           </h2>
-          <p className="text-slate-200">
-            My journey as a content creator was nothing short of extraordinary.
-            Over time, I passionately built a community of over 200,000
-            followers/subscribers, sharing engaging and creative content that
-            resonated with people. However, as my academic priorities took
-            center stage, I made the difficult decision to step away and focus
-            on my studies. Despite closing that chapter, the experience fueled
-            my creativity and taught me invaluable skills in storytelling,
-            audience engagement, and consistency. My passion for content
-            creation remains strong, and I look forward to exploring it again
-            when the time is right.
+          <p className="text-slate-200 leading-relaxed">
+            Built a creative community of 200,000+ followers through engaging
+            content. Though I stepped back for academics, the experience taught
+            me storytelling, engagement, and consistency. A chapter that shaped
+            my creative journey.
           </p>
+
+          {/* Mobile Image */}
           <div className="block md:hidden mt-10">
-            <div className="w-80 h-80   border-white border-[0.2rem] rounded-full grid place-items-center">
-              {" "}
+            <div className="w-80 h-80 border-white border-[0.2rem] rounded-full grid place-items-center">
               <img
                 src="/achieve.png"
-                alt=""
-                className="w-72 h-72 object-cover object-center rounded-full "
+                alt="Achievement"
+                className="w-72 h-72 object-cover rounded-full"
               />
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
-}
+};
 
 export default Achievement;

@@ -1,12 +1,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
+import { Montserrat, Open_Sans } from 'next/font/google';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
+const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '600'] });
+
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -22,11 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black `}
+        className={` antialiased bg-black ${montserrat.className} `}
       >
-        <Navbar/>
+        
 
+        <div className={`${openSans.className}`}>
         {children}
+        </div>
        
        
       </body>

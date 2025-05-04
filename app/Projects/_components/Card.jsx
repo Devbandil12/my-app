@@ -1,15 +1,16 @@
 import { Code, ExternalLink } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Card = ({ data }) => {
   return (
-    <div className="group  border-b-[2px]   border-gray-500 border-1 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
+    <motion.div className="group  border-b-[2px]   border-gray-500 border-1 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
       {/* Image Section */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden rounded-2xl">
         <img
           src={data.image || "/ai lms.png"}
           alt={`${data.name}'s Project`}
-          className="w-full  h-48 object-cover opacity-80 transition-transform duration-300 group-hover:scale-105 "
+          className="w-full rounded-2xl  h-48 object-cover opacity-80 transition-transform duration-300 group-hover:scale-105 "
         />
 
         {/* Top-right icons */}
@@ -34,6 +35,7 @@ const Card = ({ data }) => {
           <h2 className="text-xl font-semibold tracking-wide group-hover:text-blue-400">
             {data.name}
           </h2>
+
           <a
             href={data.link}
             target="_blank"
@@ -60,10 +62,10 @@ const Card = ({ data }) => {
 
         {/* Description */}
         <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
-          {data.desc}
+          {data?.label}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

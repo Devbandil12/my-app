@@ -1,6 +1,7 @@
 import React from "react";
 import Techstackbutton from "./Techstackbutton";
-
+import { motion } from "framer-motion";
+import { StarsIcon } from "lucide-react";
 function Biography() {
   const Backend = [
     { name: "Javascript", icon: "/js.jfif" },
@@ -19,12 +20,36 @@ function Biography() {
   ];
 
   return (
-    <div className="  w-full mt-[5rem]  text-white">
+    <div className=" h-screen w-full mt-[30rem] md:mt-[20rem]  text-white">
       {/* Biography Section */}
 
       {/* Tech Stack Section */}
 
-      <h2 className="text-3xl my-10 font-bold text-center">My TECH STACK</h2>
+      <div className=" mb-5 flex items-center justify-center flex-col ">
+        <div className=" w-fitmt-[10rem] mb-3 ">
+          <h2 className="text-2xl md:text-5xl w-full  font-bold text-center">
+            MY <span className=" text-blue-500">Skills</span>
+          </h2>
+          <motion.div
+            initial={{
+              width: 0,
+            }}
+            whileInView={{
+              width: "120%",
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            className=" h-[5px] mt-1  bg-blue-500 w-full md:-ml-[1.5rem] -ml-[1rem]"
+          ></motion.div>
+        </div>
+
+        <p className=" flex items-center justify-center gap-3 text-gray-400 mb-5">
+          Here are some skills in which i am pro <StarsIcon />
+        </p>
+      </div>
 
       <Techstackbutton data={Backend} />
     </div>
