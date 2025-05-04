@@ -3,7 +3,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import SparklesText from "@/components/Stars";
-import { CrownIcon } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
