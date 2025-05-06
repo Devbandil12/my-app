@@ -120,8 +120,8 @@ const Page = () => {
           ></motion.div>
         </div>
         <h2 className=" text-center mb-2 max-w-[24rem] text-gray-500 ">
-          "Some of my projects that showcase my interests and skills, including
-          full-stack and freelance work."{" "}
+          Some of my projects that showcase my interests and skills, including
+          full-stack and freelance work.{" "}
         </h2>
 
         <div className=" w-full flex items-center justify-center flex-col md:mt-[3rem]">
