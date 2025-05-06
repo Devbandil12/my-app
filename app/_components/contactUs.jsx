@@ -27,7 +27,7 @@ const ContactMe = () => {
         ></motion.div>
       </div>
       <p className="text-gray-400 text-center max-w-lg">
-        I'm always open to new opportunities, collaborations, and freelance
+        I am always open to new opportunities, collaborations, and freelance
         work. Reach out to me through any of the platforms below.
       </p>
 
