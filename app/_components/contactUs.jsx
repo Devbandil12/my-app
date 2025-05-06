@@ -44,7 +44,7 @@ const ContactMe = () => {
             label: "GitHub",
           },
           {
-            href: "https://www.linkedin.com/in/devbandil",
+            href: "https://www.linkedin.com/in/dev-bandil",
             icon: <Linkedin size={24} />,
             label: "LinkedIn",
           },
