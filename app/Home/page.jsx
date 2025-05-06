@@ -14,6 +14,7 @@ import Cardlist from "../Projects/_components/Cardlist";
 import Biography from "../About/_components/Biography";
 import Achievement from "../Achievements/page";
 import SparklesText from "@/components/Stars";
+import ContactMe from "../_components/contactUs";
 
 const Page = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -32,7 +33,7 @@ const Page = () => {
         onMouseMove={handleMouseMove}
       >
         {/* Heading */}
-        <div className="hover:border-t-[1px] transition-all  hove border-b-[1px]  border-b-blue-500  rounded-3xl  duration-50 hover:border-b-0 transition-all">
+        <div className="hover:border-t-[1px]  hove border-b-[1px]  border-b-blue-500  rounded-3xl  duration-50 hover:border-b-0 transition-all">
           <p className=" p-1 border-[1px] border-gray-500 flex items-center justify-center gap-1 px-2 rounded-3xl text-[10px] ">
             <SparklesText
               icon={true}
@@ -97,7 +98,7 @@ const Page = () => {
       </div>
       <div
         id="Projects"
-        className=" mt-[15rem] md:mt-[15rem] lg:mt-0 h-screen text-white flex items-center justify-center flex-col bg-black"
+        className=" mt-[20rem] px-4 md:mt-[25rem] lg:mt-0 h-screen text-white flex items-center justify-center flex-col bg-black"
       >
         <div className=" w-fit  mt-[10rem] mb-3 ">
           <h2 className="text-2xl md:text-5xl w-full  font-bold text-center">
@@ -119,8 +120,8 @@ const Page = () => {
           ></motion.div>
         </div>
         <h2 className=" text-center mb-2 max-w-[24rem] text-gray-500 ">
-          Some of my project that showcase my interest and skills, adding full
-          stack + freelance projects{" "}
+          "Some of my projects that showcase my interests and skills, including
+          full-stack and freelance work."{" "}
         </h2>
 
         <div className=" w-full flex items-center justify-center flex-col md:mt-[3rem]">
@@ -133,16 +134,15 @@ const Page = () => {
           </Link>
         </div>
       </div>
-      <div id="Skills" className=" h-screen  mt-[20rem] md:mt-16 w-full ">
+      <div id="Skills" className=" h-screen  mt-[40rem] md:mt-16 w-full ">
         <Biography />
       </div>
 
-      <div id="Achievements" className=" h-screen mt-[30rem] md:mt-[10rem]">
+      <div id="Achievements" className=" h-screen mt-[40rem] md:mt-[10rem]">
         <Achievement />
       </div>
-      <div className="  border-t-[2px] flex justify-around  text-white text-sm md:text-xl mt-[65rem] md:mt-[23rem] p-10">
-        <h2>2025 © All Rights Reserved</h2>
-        <h2>Crafted with ❤️ by Dev</h2>
+      <div className="  flex justify-around  text-white text-sm md:text-xl mt-[50rem] md:mt-[23rem] p-10">
+        <ContactMe />
       </div>
     </div>
   );

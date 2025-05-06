@@ -43,7 +43,7 @@ function Biography() {
               ease: "easeIn",
             }}
             viewport={{ once: true, amount: 0.3 }}
-            className=" h-[5px] mt-1  bg-blue-500 w-full md:-ml-[1.5rem] -ml-[1rem]"
+            className=" h-[5px] mt-1  bg-blue-500 w-full md:-ml-[1.5rem] -ml-[0.7rem]"
           ></motion.div>
         </div>
 

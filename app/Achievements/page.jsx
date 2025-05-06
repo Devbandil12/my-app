@@ -22,7 +22,7 @@ const Achievement = () => {
   const isInView3 = useInView(ref3, { once: true });
 
   return (
-    <div className="p-10 min-h-screen bg-black text-white">
+    <div className="p-10 bg-black text-white">
       {/* Heading */}
       <motion.div
         className="relative flex items-center justify-center"

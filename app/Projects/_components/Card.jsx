@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Card = ({ data }) => {
   return (
-    <motion.div className="group  border-b-[2px]   border-gray-500 border-1 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-300 ">
+    <motion.div className="group  border-b-[2px]   border-gray-500 border-1 shadow-[inset_0_2px_10px_rgba(255,255,255,0.05)] rounded-2xl overflow-hidden bg-gradient-to-br  from-zinc-900 to-black text-white hover:shadow-blue-500/20 hover:scale-105 transition-transform duration-500 ">
       {/* Image Section */}
       <div className="relative overflow-hidden rounded-2xl">
         <img
