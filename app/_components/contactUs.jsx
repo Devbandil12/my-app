@@ -9,7 +9,7 @@ const ContactMe = () => {
     <div className="w-full py-20 bg-black text-white flex flex-col items-center gap-6">
       <div>
         <h2 className="text-3xl md:text-5xl font-bold text-center">
-          Let's <span className="text-blue-500">Connect</span>
+          Contact <span className="text-blue-500">Me</span>
         </h2>
         <motion.div
           initial={{
