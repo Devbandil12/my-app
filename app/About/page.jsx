@@ -1,5 +1,6 @@
 import React from "react";
 import Biography from "./_components/Biography";
+import Experience from "./_components/Experience";
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
       </div>
 
       <Biography />
+      <Experience />
     </div>
   );
 }

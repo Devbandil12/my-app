@@ -15,6 +15,7 @@ import Biography from "../About/_components/Biography";
 import Achievement from "../Achievements/page";
 import SparklesText from "@/components/Stars";
 import ContactMe from "../_components/contactUs";
+import Experience from "../About/_components/Experience";
 
 const Page = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -77,7 +78,7 @@ const Page = () => {
 
           <motion.div className=" flex items-center justify-center flex-col md:flex-row gap-5 mt-5 ">
             <Link
-              href="https://drive.google.com/file/d/1OY7bZBwp-6gfwz9_CQmJmnBemcp9aoVN/view"
+              href="/Dev_Bandil_Resume.pdf"
               target="_blank"
             >
               <Button className="flex  items-center bg-blue-500 hover:bg-blue-500 gap-2 px-6 py-3 rounded-xl ">
@@ -137,6 +138,8 @@ const Page = () => {
       <div id="Skills" className=" h-screen  mt-[40rem] md:mt-16 w-full ">
         <Biography />
       </div>
+
+      <Experience/>
 
       <div id="Achievements" className=" h-screen mt-[40rem] md:mt-[10rem]">
         <Achievement />

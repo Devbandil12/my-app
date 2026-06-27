@@ -18,6 +18,8 @@ function Biography() {
     { name: "Docker", icon: "/docker-icon.webp" },
     { name: "Postman", icon: "/postman.webp" },
     { name: "GSAP", icon: "/Gsap.webp" },
+    { name: "TypeScript", icon: "/typescript.svg" },
+    { name: "RAG", icon: "/ai.webp" },
   ];
 
   return (
