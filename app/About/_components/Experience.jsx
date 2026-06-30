@@ -25,6 +25,7 @@ const milestones = [
     accent: "border-blue-500",
     iconBg: "bg-blue-500/10",
     iconColor: "text-blue-400",
+    dotBorder: "border-blue-500",
     glow: "shadow-blue-500/20",
   },
   {
@@ -35,8 +36,8 @@ const milestones = [
     accent: "border-purple-500",
     iconBg: "bg-purple-500/10",
     iconColor: "text-purple-400",
+    dotBorder: "border-purple-500",
     glow: "shadow-purple-500/20",
-    stat: null,
   },
   {
     icon: Zap,
@@ -46,6 +47,7 @@ const milestones = [
     accent: "border-green-500",
     iconBg: "bg-green-500/10",
     iconColor: "text-green-400",
+    dotBorder: "border-green-500",
     glow: "shadow-green-500/20",
     stat: "2s → 500ms",
   },
@@ -57,6 +59,7 @@ const milestones = [
     accent: "border-red-500",
     iconBg: "bg-red-500/10",
     iconColor: "text-red-400",
+    dotBorder: "border-red-500",
     glow: "shadow-red-500/20",
     stat: "70% latency reduction",
   },
@@ -68,6 +71,7 @@ const milestones = [
     accent: "border-yellow-500",
     iconBg: "bg-yellow-500/10",
     iconColor: "text-yellow-400",
+    dotBorder: "border-yellow-500",
     glow: "shadow-yellow-500/20",
   },
   {
@@ -78,6 +82,7 @@ const milestones = [
     accent: "border-orange-500",
     iconBg: "bg-orange-500/10",
     iconColor: "text-orange-400",
+    dotBorder: "border-orange-500",
     glow: "shadow-orange-500/20",
   },
   {
@@ -88,16 +93,18 @@ const milestones = [
     accent: "border-teal-500",
     iconBg: "bg-teal-500/10",
     iconColor: "text-teal-400",
+    dotBorder: "border-teal-500",
     glow: "shadow-teal-500/20",
   },
   {
     icon: UserCheck,
-    title: "Secure User Impersonation (Login-As)",
+    title: "Secure User Impersonation",
     description:
-      "Built secure user impersonation functionality for enterprise support teams, reducing customer issue resolution time by 40% while maintaining complete audit trails.",
+      "Built secure user impersonation (Login-As) functionality for enterprise support teams, reducing customer issue resolution time by 40% while maintaining complete audit trails.",
     accent: "border-pink-500",
     iconBg: "bg-pink-500/10",
     iconColor: "text-pink-400",
+    dotBorder: "border-pink-500",
     glow: "shadow-pink-500/20",
     stat: "40% faster resolution",
   },
@@ -109,6 +116,7 @@ const milestones = [
     accent: "border-indigo-500",
     iconBg: "bg-indigo-500/10",
     iconColor: "text-indigo-400",
+    dotBorder: "border-indigo-500",
     glow: "shadow-indigo-500/20",
   },
   {
@@ -119,40 +127,26 @@ const milestones = [
     accent: "border-cyan-500",
     iconBg: "bg-cyan-500/10",
     iconColor: "text-cyan-400",
+    dotBorder: "border-cyan-500",
     glow: "shadow-cyan-500/20",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
+const cardVariants = {
+  hidden: (dir) => ({ opacity: 0, x: dir === "left" ? -50 : 50 }),
+  visible: { opacity: 1, x: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
 
-const leftVariants = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const rightVariants = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const lineVariants = {
-  hidden: { scaleY: 0 },
-  visible: {
-    scaleY: 1,
-    transition: { duration: 1.5, ease: "easeInOut" },
-  },
+const mobileCardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Experience() {
   return (
-    <section className="w-full py-20 px-4 text-white">
+    <section className="w-full py-16 px-4 text-white">
       {/* Section Header */}
-      <div className="flex flex-col items-center justify-center mb-16">
+      <div className="flex flex-col items-center justify-center mb-12">
         <div className="w-fit mb-3">
           <h2 className="text-2xl md:text-5xl font-bold text-center">
             MY <span className="text-blue-500">Experience</span>
@@ -162,134 +156,148 @@ export default function Experience() {
             whileInView={{ width: "120%" }}
             transition={{ duration: 1, ease: "easeIn" }}
             viewport={{ once: true, amount: 0.3 }}
-            className="h-[5px] mt-1 bg-blue-500 w-full md:-ml-[1.5rem] -ml-[0.7rem]"
+            className="h-[5px] mt-1 bg-blue-500 md:-ml-[1.5rem] -ml-[0.7rem]"
           />
         </div>
-        <p className="text-gray-400 mt-2 text-sm md:text-base text-center">
+        <p className="text-gray-400 mt-3 text-sm md:text-base text-center">
           1 year of building production-grade systems
         </p>
       </div>
 
       {/* Company Card */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.3 }}
-        className="max-w-2xl mx-auto mb-16 rounded-2xl border border-blue-500/40 bg-blue-500/5 p-6 shadow-lg shadow-blue-500/10 backdrop-blur-sm"
+        className="max-w-xl mx-auto mb-12 rounded-2xl border border-blue-500/40 bg-blue-500/5 p-5 shadow-lg shadow-blue-500/10"
       >
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-xl bg-blue-500/10 shrink-0">
-            <Building2 className="text-blue-400 w-7 h-7" />
+            <Building2 className="text-blue-400 w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-lg font-bold text-white leading-snug">
               Full Stack Software Engineer
             </h3>
-            <p className="text-blue-400 font-semibold mt-0.5">
+            <p className="text-blue-400 font-semibold text-sm mt-0.5">
               Digimonk Technology
             </p>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mt-2">
-              <Calendar className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-gray-400 text-xs mt-2">
+              <Calendar className="w-3.5 h-3.5" />
               <span>July 2025 – Present · 1 yr</span>
             </div>
           </div>
         </div>
       </motion.div>
 
-      {/* Timeline */}
-      <div className="relative max-w-5xl mx-auto">
-        {/* Vertical line */}
-        <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gray-800 hidden md:block">
+      {/* ── MOBILE / TABLET timeline (< lg) ── */}
+      <div className="lg:hidden max-w-2xl mx-auto">
+        {milestones.map((m, i) => {
+          const Icon = m.icon;
+          const isLast = i === milestones.length - 1;
+          return (
+            <div key={i} className="flex gap-3 sm:gap-4">
+              {/* Left rail: dot + connecting line */}
+              <div className="flex flex-col items-center shrink-0">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.35, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 ${m.dotBorder} ${m.iconBg} flex items-center justify-center shrink-0 z-10`}
+                >
+                  <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${m.iconColor}`} />
+                </motion.div>
+                {!isLast && (
+                  <div className="w-px flex-1 mt-1 bg-gradient-to-b from-gray-600 to-gray-800 min-h-[1.5rem]" />
+                )}
+              </div>
+
+              {/* Card */}
+              <motion.div
+                custom="right"
+                variants={mobileCardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                className="flex-1 mb-6"
+              >
+                <MilestoneCard m={m} Icon={Icon} />
+              </motion.div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ── DESKTOP alternating timeline (lg+) ── */}
+      <div className="hidden lg:block max-w-5xl mx-auto relative">
+        {/* Center vertical line */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px overflow-hidden">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
             viewport={{ once: true, amount: 0.05 }}
-            variants={lineVariants}
             style={{ originY: 0 }}
-            className="w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-60"
+            className="w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-50"
           />
         </div>
 
-        {/* Mobile left line */}
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-800 md:hidden">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.05 }}
-            variants={lineVariants}
-            style={{ originY: 0 }}
-            className="w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 opacity-60"
-          />
-        </div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-          className="flex flex-col gap-10"
-        >
+        <div className="flex flex-col gap-8">
           {milestones.map((m, i) => {
             const isLeft = i % 2 === 0;
             const Icon = m.icon;
-
             return (
-              <div key={i} className="relative flex items-start md:items-center">
-                {/* Desktop: Left card */}
-                <motion.div
-                  variants={isLeft ? leftVariants : rightVariants}
-                  className={`hidden md:block w-[calc(50%-2rem)] ${
-                    isLeft ? "mr-auto pr-8" : "ml-auto pl-8 opacity-0 pointer-events-none"
-                  }`}
-                >
-                  {isLeft && (
-                    <MilestoneCard m={m} Icon={Icon} />
-                  )}
-                </motion.div>
+              <div key={i} className="grid grid-cols-[1fr_64px_1fr] items-center">
+                {/* Left slot */}
+                <div className="pr-6 flex justify-end">
+                  {isLeft ? (
+                    <motion.div
+                      custom="left"
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.2 }}
+                      className="w-full max-w-md"
+                    >
+                      <MilestoneCard m={m} Icon={Icon} />
+                    </motion.div>
+                  ) : null}
+                </div>
 
                 {/* Center dot */}
-                <div className="absolute left-1/2 -translate-x-1/2 z-10 hidden md:flex items-center justify-center">
+                <div className="flex items-center justify-center z-10">
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className={`w-10 h-10 rounded-full border-2 ${m.accent} ${m.iconBg} flex items-center justify-center shadow-lg ${m.glow}`}
+                    className={`w-10 h-10 rounded-full border-2 ${m.dotBorder} ${m.iconBg} flex items-center justify-center shadow-lg ${m.glow}`}
                   >
                     <Icon className={`w-4 h-4 ${m.iconColor}`} />
                   </motion.div>
                 </div>
 
-                {/* Desktop: Right card */}
-                <motion.div
-                  variants={!isLeft ? rightVariants : leftVariants}
-                  className={`hidden md:block w-[calc(50%-2rem)] ${
-                    !isLeft ? "ml-auto pl-8" : "mr-auto pr-8 opacity-0 pointer-events-none"
-                  }`}
-                >
-                  {!isLeft && (
-                    <MilestoneCard m={m} Icon={Icon} />
-                  )}
-                </motion.div>
-
-                {/* Mobile layout */}
-                <motion.div
-                  variants={rightVariants}
-                  className="md:hidden flex items-start gap-4 pl-14 w-full"
-                >
-                  {/* Mobile dot */}
-                  <div
-                    className={`absolute left-2 w-8 h-8 rounded-full border-2 ${m.accent} ${m.iconBg} flex items-center justify-center z-10 shadow-lg ${m.glow}`}
-                  >
-                    <Icon className={`w-3.5 h-3.5 ${m.iconColor}`} />
-                  </div>
-                  <MilestoneCard m={m} Icon={Icon} />
-                </motion.div>
+                {/* Right slot */}
+                <div className="pl-6 flex justify-start">
+                  {!isLeft ? (
+                    <motion.div
+                      custom="right"
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.2 }}
+                      className="w-full max-w-md"
+                    >
+                      <MilestoneCard m={m} Icon={Icon} />
+                    </motion.div>
+                  ) : null}
+                </div>
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -298,17 +306,17 @@ export default function Experience() {
 function MilestoneCard({ m, Icon }) {
   return (
     <div
-      className={`rounded-xl border ${m.accent} bg-black-2/60 backdrop-blur-sm p-5 shadow-lg ${m.glow} hover:scale-[1.02] transition-transform duration-300`}
+      className={`rounded-xl border ${m.accent} bg-black-2/60 p-4 sm:p-5 shadow-md ${m.glow} hover:scale-[1.02] transition-transform duration-300 w-full`}
     >
-      <div className="flex items-center gap-3 mb-2">
-        <div className={`p-2 rounded-lg ${m.iconBg}`}>
+      <div className="flex items-start gap-3 mb-2">
+        <div className={`p-2 rounded-lg ${m.iconBg} shrink-0 mt-0.5`}>
           <Icon className={`w-4 h-4 ${m.iconColor}`} />
         </div>
-        <h4 className="font-semibold text-white text-sm md:text-base leading-tight">
+        <h4 className="font-semibold text-white text-sm sm:text-base leading-snug">
           {m.title}
         </h4>
       </div>
-      <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+      <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
         {m.description}
       </p>
       {m.stat && (

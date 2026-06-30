@@ -23,7 +23,7 @@ function Biography() {
   ];
 
   return (
-    <div className=" h-screen w-full mt-[30rem] md:mt-[20rem]  text-white">
+    <div className="w-full py-16 text-white">
       {/* Biography Section */}
 
       {/* Tech Stack Section */}

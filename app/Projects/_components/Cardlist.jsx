@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TABS = ["All", "Full Stack", "AI Powered", "Freelance"];
+const TABS = ["AI Powered", "Freelance"];
 
 const projects = [
   {

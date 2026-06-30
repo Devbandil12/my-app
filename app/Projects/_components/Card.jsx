@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
 
 const labelColor = {
-  personal: "bg-blue-600/20 text-blue-400 border-blue-500/30",
+  personal: "bg-blue-600/40 text-blue-800 border-blue-500/30",
   Personal: "bg-blue-600/20 text-blue-400 border-blue-500/30",
-  freelance: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-  Freelance: "bg-purple-600/20 text-purple-400 border-purple-500/30",
+  freelance: "bg-purple-600/40 text-purple-900 border-purple-500/30",
+  Freelance: "bg-purple-600/40 text-purple-900 border-purple-500/30",
   Saas: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
 };
 

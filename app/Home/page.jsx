@@ -99,9 +99,9 @@ const Page = () => {
       </div>
       <div
         id="Projects"
-        className=" mt-[20rem] px-4 md:mt-[25rem] lg:mt-0 h-screen text-white flex items-center justify-center flex-col bg-black"
+        className="px-4 py-20 text-white flex items-center justify-center flex-col bg-black"
       >
-        <div className=" w-fit  mt-[10rem] mb-3 ">
+        <div className="w-fit mb-3">
           <h2 className="text-2xl md:text-5xl w-full  font-bold text-center">
             MY <span className=" text-blue-500">Projects</span>
           </h2>
@@ -135,16 +135,16 @@ const Page = () => {
           </Link>
         </div>
       </div>
-      <div id="Skills" className=" h-screen  mt-[40rem] md:mt-16 w-full ">
+      <div id="Skills" className="w-full">
         <Biography />
       </div>
 
       <Experience/>
 
-      <div id="Achievements" className=" h-screen mt-[40rem] md:mt-[10rem]">
+      <div id="Achievements">
         <Achievement />
       </div>
-      <div className="  flex justify-around  text-white text-sm md:text-xl mt-[50rem] md:mt-[23rem] p-10">
+      <div className="flex justify-around text-white text-sm md:text-xl p-10">
         <ContactMe />
       </div>
     </div>
